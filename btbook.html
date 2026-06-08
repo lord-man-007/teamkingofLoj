@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chợ Tốt - Mua Bán Đồ Cũ</title>
+    <style>
+        /* =========================================
+           RESET & BASIC SETUP (Áp dụng kiến thức Chương 5)
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Box-sizing chuẩn */
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #111111; /* Nền đen chủ đạo */
+            color: #ffffff;            /* Chữ trắng */
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           HEADER & LOGO STYLE
+        ========================================= */
+        header {
+            background-color: #000000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+        }
+
+        /* Logo theo style yêu cầu */
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            background-color: #FFA31A; /* Màu cam đặc trưng */
+            color: #000000;
+            padding: 2px 8px;
+            border-radius: 5px; /* Bo góc */
+            margin-left: 3px;
+            display: inline-block;
+        }
+
+        nav ul {
+            list-style: none; /* Thẻ danh sách - Chương 2 */
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: #FFA31A; /* Pseudo-class :hover - Chương 5 */
+        }
+
+        /* =========================================
+           HERO SECTION & SEARCH FORM
+        ========================================= */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #1a1a1a;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Form tìm kiếm - Chương 2 */
+        .search-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-form input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #FFA31A;
+            border-radius: 4px;
+            background-color: #222;
+            color: white;
+            outline: none;
+        }
+
+        .search-form button {
+            padding: 12px 25px;
+            background-color: #FFA31A;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-form button:hover {
+            background-color: #e69217;
+        }
+
+        /* =========================================
+           PRODUCT GRID (CSS Grid Responsive - Chương 5)
+        ========================================= */
+        main {
+            padding: 40px 5%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            border-left: 5px solid #FFA31A;
+            padding-left: 10px;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            /* Tự động co giãn cột theo kích thước màn hình */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 163, 26, 0.2);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background-color: #333; /* Màu nền giữ chỗ nếu không có ảnh */
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        .price {
+            color: #FFA31A;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            color: #FFA31A;
+            border: 1px solid #FFA31A;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #FFA31A;
+            color: black;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #000;
+            color: #777;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+        }
+
+        /* =========================================
+           MEDIA QUERIES (Responsive - Chương 5)
+        ========================================= */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .search-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Semantic HTML: Header -->
+    <header>
+        <div class="logo">Chợ<span>Tốt</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Đồ điện tử</a></li>
+                <li><a href="#">Xe cộ</a></li>
+                <li><a href="#">Đăng tin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Semantic HTML: Khu vực banner & form -->
+    <section class="hero">
+        <h1>Mua bán đồ cũ nhanh chóng, uy tín</h1>
+        <form class="search-form" action="#" method="GET">
+            <input type="text" placeholder="Bạn muốn mua gì hôm nay?" required>
+            <button type="submit">Tìm Kiếm</button>
+        </form>
+    </section>
+
+    <!-- Semantic HTML: Khu vực nội dung chính -->
+    <main>
+        <h2 class="section-title">Tin đăng mới nhất</h2>
+        
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <article class="product-card">
+                <img src="https://via.placeholder.com/300x200/333333/FFA31A?text=Laptop+Cu" alt="Laptop cũ" class="product-img">
+                <div class="product-info">
+                    <h3>Macbook Pro 2019 M1 (Cũ)</h3>
+                    <p class="price">15.500.000 đ</p>
+                    <a href="#" class="buy-btn">Xem Chi Tiết</a>
+                </div>
+            </article>
+
+            <!-- Sản phẩm 2 -->
+            <article class="product-card">
+                <img src="https://via.placeholder.com/300x200/333333/FFA31A?text=Dien+Thoai" alt="Điện thoại" class="product-img">
+                <div class="product-info">
+                    <h3>iPhone 13 Pro Max 128GB</h3>
+                    <p class="price">18.200.000 đ</p>
+                    <a href="#" class="buy-btn">Xem Chi Tiết</a>
+                </div>
+            </article>
+
+            <!-- Sản phẩm 3 -->
+            <article class="product-card">
+                <img src="https://via.placeholder.com/300x200/333333/FFA31A?text=Xe+May" alt="Xe máy" class="product-img">
+                <div class="product-info">
+                    <h3>Honda Vision 2021 Đen Nhám</h3>
+                    <p class="price">25.000.000 đ</p>
+                    <a href="#" class="buy-btn">Xem Chi Tiết</a>
+                </div>
+            </article>
+
+            <!-- Sản phẩm 4 -->
+            <article class="product-card">
+                <img src="https://via.placeholder.com/300x200/333333/FFA31A?text=May+Anh" alt="Máy ảnh" class="product-img">
+                <div class="product-info">
+                    <h3>Sony A6000 + Kit 16-50</h3>
+                    <p class="price">8.500.000 đ</p>
+                    <a href="#" class="buy-btn">Xem Chi Tiết</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Semantic HTML: Footer -->
+    <footer>
+        <p>&copy; 2024 Chợ Tốt (Style Concept). Mua bán an toàn.</p>
+    </footer>
+
+</body>
+</html>
