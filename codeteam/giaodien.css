@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd; /* Màu nền trắng nhẹ */
+    color: #333333;
+}
+
+/* Thanh đầu trang */
+header {
+    background-color: #ffffff; /* Nền trắng */
+    border-bottom: 3px solid #ffcc00; /* Đường viền vàng làm điểm nhấn */
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+}
+ .logo {
+            font-size: 32px;
+            font-weight: 900;
+        }
+header h1 {
+    margin: 0;
+    color: #333333;
+    font-size: 24px;
+}
+
+/* Thanh điều hướng */
+nav {
+    background-color: #fffde0; /* Màu vàng nhạt */
+    padding: 10px 30px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+nav a {
+    color: #333333;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.thanh-tim-kiem input {
+            width: 400px;  /* Độ dài ô nhập */
+            padding: 10px; /* Độ dày ô nhập */
+            border: none;  /* Bỏ viền cho đẹp */
+            border-radius: 3px; /* Bo cong góc một xíu */
+            outline: none; /* Bỏ viền xanh khi nhấp chuột vào */
+        }
+
+        .thanh-tim-kiem button {
+            padding: 10px 20px;
+            background-color: white; /* Nút màu trắng */
+            color: #ee4d2d;          /* Chữ trong nút màu cam */
+            border: 1px solid white; 
+            border-radius: 3px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 5px; /* Cách ô nhập chữ 5px */
+        }
+/* Khu vực nội dung chính */
+main {
+    width: 90%;
+    max-width: 1200px; /* Bố cục không quá rộng */
+    margin: 30px auto;
+    background-color: #ffffff; /* Nền trắng cho nội dung */
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Hiệu ứng bóng nhẹ */
+}
+
+/* Tiêu đề mục */
+h2 {
+    color: #333333;
+    border-bottom: 2px solid #ffcc00; /* Đường viền vàng cho tiêu đề */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Bố cục lưới sản phẩm */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tự động chia cột */
+    grid-gap: 20px;
+}
+
+/* Thẻ sản phẩm */
+.product-box {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fffde0; /* Nền vàng nhạt cho thẻ */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-box:hover {
+    transform: translateY(-5px); /* Hiệu ứng nổi lên khi di chuột */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+        .san-pham {
+            display: inline-block; /* Quan trọng: Giúp các cục sản phẩm đứng xếp hàng ngang cạnh nhau */
+            background-color: white; /* Nền trắng (nổi bật trên nền web xám) */
+            width: 200px;      /* Cố định chiều rộng */
+            margin: 10px;      /* Khoảng cách giữa các khối */
+            padding: 10px;     /* Lề bên trong */
+            text-align: left;  /* Chữ trong sản phẩm thì căn trái */
+            border: 1px solid #e0e0e0; /* Viền mỏng màu xám nhạt */
+            border-radius: 3px;
+        }
+
+        /* Chỉnh ảnh sản phẩm */
+        .san-pham img {
+            width: 100%;       /* Ảnh tự động bóp vừa bằng chiều rộng thẻ sản phẩm */
+            height: 180px;     /* Ép tất cả ảnh cao bằng nhau */
+            object-fit: cover; /* Chống méo ảnh */
+        }
+
+        /* Tên sản phẩm */
+        .san-pham h3 {
+            font-size: 14px; /* Chữ vừa phải */
+            font-weight: normal; /* Không in đậm */
+            margin: 10px 0; /* Cách trên dưới 10px */
+            /* Mẹo CSS: Cắt chữ nếu tên sản phẩm quá dài (chỉ hiện 1 dòng) */
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+
+        /* Giá tiền */
+        .gia-tien {
+            color: #ee4d2d; /* Màu cam Shopee */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+.product-image-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.product-box h3 {
+    margin: 10px 0;
+    color: #333333;
+    font-size: 16px;
+}
+
+.price {
+    color: #d9534f; /* Màu đỏ cho giá */
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Form và Button */
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ffcc00; /* Màu vàng đậm hơn cho nút */
+    color: #333333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+/* Chân trang */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    color: #777777;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsive - di động */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 8px 15px;
+    }
+
+    main {
+        width: 100%;
+        padding: 15px;
+        box-shadow: none;
+        border: none;
+    }
+}

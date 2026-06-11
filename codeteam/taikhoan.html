@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản Hệ Thống</title>
+    <link rel="stylesheet" href="giaodien.css">
+</head>
+<body>
+
+    <header>
+        <h1>HỆ THỐNG THÀNH VIÊN</h1>
+    </header>
+
+    <nav>
+        <a href="idea.html">Trang Chủ</a>
+        <a href="vatdung.html">Vật Dụng Gia Đình</a>
+        <a href="dientu.html">Thiết Bị Điện Tử</a>
+        <a href="phuongtien.html">Phương Tiện</a>
+        <a href="trangphuc.html">Trang Phục</a>
+        <a href="giohang.html">Giỏ Hàng</a>
+        <a href="taikhoan.html">Đăng Nhập / Đăng Ký</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2 style="text-align: center;">1. Đăng Nhập Hệ Thống</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="login-email">Tài khoản Email / Số điện thoại:</label>
+                    <input type="text" id="login-email" placeholder="Nhập email hoặc SĐT..." required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Mật khẩu:</label>
+                    <input type="password" id="login-pass" placeholder="Nhập mật khẩu..." required>
+                </div>
+                <button type="submit">Đăng Nhập</button>
+            </form>
+        </section>
+
+        <br><hr><br>
+
+        <section>
+            <h2 style="text-align: center;">2. Đăng Ký Tài Khoản Mới</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="reg-name">Họ và Tên:</label>
+                    <input type="text" id="reg-name" placeholder="Ví dụ: Nguyễn Văn A" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Địa chỉ Email:</label>
+                    <input type="email" id="reg-email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-role">Bạn là người dùng hệ thống với vai trò nào?</label>
+                    <select id="reg-role">
+                        <option value="buyer">Tôi muốn tìm mua đồ cũ</option>
+                        <option value="seller">Tôi muốn đăng tin thanh lý đồ cũ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Mật khẩu mới:</label>
+                    <input type="password" id="reg-pass" placeholder="Tối thiểu 6 ký tự" required>
+                </div>
+                <button type="submit">Đăng Ký Tài Khoản</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chợ Tốt Đồ Cũ</p>
+    </footer>
+
+</body>
+</html>
